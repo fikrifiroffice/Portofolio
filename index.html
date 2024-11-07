@@ -1,59 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link id='favicon' rel="shortcut icon" href="./assets/images/favicon.png" type="image/x-png">
-    <title>Portfolio | Fikri Firmansyah</title>
-    <link rel="stylesheet" href="./assets/css/styles.css">
-    <!-- Bootstrap CSS --> 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- Separate Popper and Bootstrap JS --> 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script> 
-    <!-- jQuery library for additional JavaScript functionality --> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link id="favicon" rel="shortcut icon" href="./assets/images/favicon.png" type="image/png" />
+  <title>Portfolio | Fikri Firmansyah</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <!-- Bootstrap & CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- Separate Popper and Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
+  <!-- jQuery library for additional JavaScript functionality -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
+
 <body>
+  <!-- Header -->
+  <header id="header" class="header">
     <!-- Navbar -->
-    <header id="header" class="header">
+    <nav id="navbar"
+      class="navbar navbar-expand-lg navbar-light fixed-top d-flex justify-content-center align-items-center py-2">
+      <div class="container d-flex justify-content-between align-items-center w-100">
+        <!-- Logo dan Judul -->
+        <a class="navbar-brand fs-5 text-primary fw-bold d-flex align-items-center" href="#">
+          <img src="assets/images/favicon.png" alt="Logo" style="height: 24px; margin-right: 8px;">
+          Fikri Firmansyah
+        </a>
+        <!-- Navbar Toggler -->
+        <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Sidebar -->
+        <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header text-white border-bottom border-dark">
+            <h6 class="offcanvas-title text-primary fw-bolder" id="offcanvasNavbarLabel">
+              Fikri Firmansyah
+            </h6>
+            <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body d-flex flex-column p-4 p-lg-0">
+            <ul class="navbar-nav justify-content-end align-items-center fs-6 pe-3">
+              <li class="nav-item mx-2 fw-bold">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item mx-2 fw-bold">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item mx-2 fw-bold">
+                <a class="nav-link" href="#resume">Resume</a>
+              </li>
+              <li class="nav-item mx-2 fw-bold">
+                <a class="nav-link" href="#portfolio">Portfolio</a>
+              </li>
+              <li class="nav-item mx-2 fw-bold">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-    </header>
+  <!-- Main -->
+  <main class="main">
+    <!-- Home -->
+    <h1 style="color: aliceblue;">Hello world</h1>
+    <section id="home" class="home section"></section>
 
-    <!-- Main -->
-    <main class="main">
-        <!-- Home -->
-        <section id="home" class="home section">
+    <!-- About -->
+    <section id="about" class="about section"></section>
 
-        </section>
-    
-        <!-- About -->
-        <section id="about" class="about section">
+    <!-- Resume -->
+    <section id="resume" class="resume section"></section>
 
-        </section>
-    
-        <!-- Resume -->
-        <section id="resume" class="resume section">
+    <!-- Portfolio -->
+    <section id="portfolio" class="portfolio section"></section>
 
-        </section>
-    
-        <!-- Portfolio -->
-        <section id="portfolio" class="portfolio section">
+    <!-- Contact Me -->
+    <section id="contact" class="contact section"></section>
+  </main>
 
-        </section>
-    
-        <!-- Contact Me -->
-        <section id="contact" class="contact section">
+  <!-- Footer -->
+  <footer class="footer"></footer>
 
-        </section>
-    </main>
-    
-    <!-- Footer -->
-    <footer class="footer">
-
-    </footer>
-    
-    <!-- Script JS -->
-    <script src="./assets/js/script.js"></script>
+  <!-- Script JS -->
+  <script src="./assets/js/script.js"></script>
 </body>
+
 </html>

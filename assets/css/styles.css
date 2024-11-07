@@ -1,3 +1,60 @@
+/* Root */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+/* Srollbar */
+html::-webkit-scrollbar {
+    width: 0.5rem;
+}
+html::-webkit-scrollbar-track {
+    background: rgb(235, 202, 245);
+}
+html::-webkit-scrollbar-thumb {
+    background: #420177;
+}
 body {
-    background-color: aqua;
+    overflow-x: hidden;
+    background-blend-mode: multiply;
+    background-position: center;
+    background-size: cover;
+    height: 300vh;
+ /* font-family: 'Poppins', sans-serif; */
+}
+/* Navbar */
+@media (max-width: 991px) {
+    .sidebar {
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+    }
+}
+.navbar-brand {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.navbar-brand:hover {
+    color: #007bff;
+    transform: scale(1.05);
+}
+#navbar {
+    transition: background-color 0.3s ease;
+}
+.navbar-nav .nav-link {
+    color: #333; /* Warna teks gelap */
+}
+
+.navbar-nav .nav-link.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 8px;
+}
+.scrolled {
+    background-color: rgba(255, 255, 255, 0.879);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
