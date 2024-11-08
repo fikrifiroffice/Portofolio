@@ -1,77 +1,206 @@
 /* Root */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 ul {
-    list-style: none;
+  list-style: none;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* Srollbar */
 html::-webkit-scrollbar {
-    width: 0.5rem;
+  width: 0.5rem;
 }
 html::-webkit-scrollbar-track {
-    background: rgb(235, 202, 245);
+  background: rgb(235, 202, 245);
 }
 html::-webkit-scrollbar-thumb {
-    background: #420177;
+  background: #420177;
 }
 
 body {
-    overflow-x: hidden;
-    background: linear-gradient(135deg, #7cb5e7, #ffffff, #b28dff); /* Gradasi biru muda, putih, ungu muda */
-    background-size: 100% 100%;
- /* font-family: 'Poppins', sans-serif; */
+  overflow-x: hidden;
+  background: linear-gradient(
+    135deg,
+    #7cb5e7,
+    #ffffff,
+    #b28dff
+  ); /* Gradasi biru muda, putih, ungu muda */
+  background-size: 100% 100%;
+  /* font-family: 'Poppins', sans-serif; */
 }
 
 .section {
-    min-height: 100vh;
-    padding: 2rem 0;
-    display: flex;
-    align-items: center;
-    background-color: #ffffff; /* Warna putih untuk section agar lebih bersih */
-    background-image: linear-gradient(135deg, #e0f7fa, #b28dff); /* Gradasi biru muda dan ungu muda */
+  min-height: 100vh;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff; /* Warna putih untuk section agar lebih bersih */
+  background-image: linear-gradient(
+    135deg,
+    #e0f7fa,
+    #b28dff
+  ); /* Gradasi biru muda dan ungu muda */
 }
 
 /* Navbar */
 @media (max-width: 991px) {
-    .sidebar {
-        background-color: rgba(255, 255, 255, 0.75);
-        backdrop-filter: blur(8px);
-    }
+  .sidebar {
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+  }
 }
 .navbar-brand {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-    transition: all 0.3s ease;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 .navbar-brand:hover {
-    color: #007bff;
-    transform: scale(1.05);
+  color: #007bff;
+  transform: scale(1.05);
 }
 #navbar {
-    transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 .navbar-nav .nav-link {
-    color: #333; /* Warna teks gelap */
+  color: #333; /* Warna teks gelap */
 }
 
 .navbar-nav .nav-link.active {
-    color: #007bff;
-    border-bottom: 2px solid #007bff;
-    padding-bottom: 8px;
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 8px;
 }
 .scrolled {
-    background-color: rgba(255, 255, 255, 1);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* Home Section */
+#home {
+  background: linear-gradient(135deg, #7cb5e7, #ffffff, #b28dff);
+  text-align: center;
+  position: relative;
+  padding-bottom: 5rem;
+}
+
+/* Blob Mask untuk Gambar Profil */
+.blob-mask {
+  background: linear-gradient(
+    135deg,
+    #7cb5e7,
+    #b28dff
+  ); /* Gradasi biru dan ungu muda */
+  -webkit-mask-image: url("../images/blob.svg");
+  mask-image: url("../images/blob.svg");
+  mask-size: 210%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+/* Gambar dalam Blob Mask */
+.masked-image {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+}
+
+/* Wave Background di Bagian Bawah Home */
+.wave-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.wave {
+  width: 100%;
+  height: auto;
+}
+
+/* Tombol About Me */
+.btn-about-me {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background-color: #5636d3;
+  color: #ffffff;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.btn-about-me i {
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+}
+
+.btn-about-me:hover {
+  background-color: #452cb1;
+}
+
+/* Role Text di Bagian Home */
+#role {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+/* Button */
+.btn-about-me {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background-color: #5636d3; /* Warna ungu */
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.btn-about-me:hover {
+  background-color: #452cb1;
+}
+
+/* About Section */
+#about {
+  background: linear-gradient(
+    135deg,
+    #b28dff,
+    #ffffff
+  ); /* Gradasi ungu dan putih */
+  color: #333; /* Warna teks gelap agar mudah dibaca */
+}
+
+/* Resume Section */
+#resume {
+  background-color: #e0f7fa; /* Warna biru pastel */
+}
+
+/* Portfolio Section */
+#portfolio {
+  background: linear-gradient(
+    135deg,
+    #7cb5e7,
+    #b28dff
+  ); /* Gradasi biru dan ungu muda */
+}
+
+/* Contact Section */
+#contact {
+  background-color: #ffffff; /* Latar belakang putih */
+}

@@ -44,7 +44,7 @@
           <div class="offcanvas-body p-4 p-lg-0">
             <ul class="navbar-nav ms-auto justify-content-end align-items-center fs-6 pe-3">
               <li class="nav-item mx-2 fw-bold">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="#home">Home</a>
               </li>
               <li class="nav-item mx-2 fw-bold">
                 <a class="nav-link" href="#about">About</a>
@@ -68,7 +68,33 @@
   <!-- Main -->
   <main class="main">
     <!-- Home -->
-    <section id="home" class="home section"></section>
+    <section id="home" class="d-flex flex-column justify-content-center align-items-center min-vh-100 position-relative container-fluid">
+      <div class="container-fluid row align-items-center mt-5 p-3">
+        <!-- Kolom gambar profil -->
+        <div class="col-md-6 col-lg-5 text-center position-relative">
+          <div class="blob-mask">
+            <img src="assets/images/pp1.png" alt="Profile Image" class="img-fluid masked-image">
+          </div>
+        </div>
+
+        <!-- Kolom teks perkenalan -->
+        <div class="col-md-6 col-lg-6 text-end">
+          <h1 class="display-4 mb-3 me-4">Hai, Saya Fikri Firmansyah</h1>
+          <h2 class="h3 mb-3 me-4">Saya seorang <span id="role" class="text-primary fw-bold"></span></h2>
+          <p class="lead mb-4 me-4">
+            Mahasiswa D3 PJJ Teknik Informatika dan Drafter Elektrikal-Mekanikal berpengalaman, menggabungkan keahlian teknologi dan teknik untuk solusi inovatif.
+          </p>
+          <a href="#about" class="btn btn-primary btn-about-me me-4 mb-3">
+            About Me <i class="fas fa-arrow-down ms-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Background bergelombang -->
+      <div class="wave-container">
+        <img src="assets/images/wave1.svg" alt="Wave" class="wave">
+      </div>
+    </section>
 
     <!-- About -->
     <section id="about" class="about section"></section>
