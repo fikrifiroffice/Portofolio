@@ -4,10 +4,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
 
 html {
     scroll-behavior: smooth;
 }
+
 /* Srollbar */
 html::-webkit-scrollbar {
     width: 0.5rem;
@@ -18,19 +25,28 @@ html::-webkit-scrollbar-track {
 html::-webkit-scrollbar-thumb {
     background: #420177;
 }
+
 body {
     overflow-x: hidden;
-    background-blend-mode: multiply;
-    background-position: center;
-    background-size: cover;
-    height: 300vh;
+    background: linear-gradient(135deg, #7cb5e7, #ffffff, #b28dff); /* Gradasi biru muda, putih, ungu muda */
+    background-size: 100% 100%;
  /* font-family: 'Poppins', sans-serif; */
 }
+
+.section {
+    min-height: 100vh;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff; /* Warna putih untuk section agar lebih bersih */
+    background-image: linear-gradient(135deg, #e0f7fa, #b28dff); /* Gradasi biru muda dan ungu muda */
+}
+
 /* Navbar */
 @media (max-width: 991px) {
     .sidebar {
-        background-color: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(8px);
     }
 }
 .navbar-brand {
@@ -55,6 +71,7 @@ body {
     padding-bottom: 8px;
 }
 .scrolled {
-    background-color: rgba(255, 255, 255, 0.879);
+    background-color: rgba(255, 255, 255, 1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
