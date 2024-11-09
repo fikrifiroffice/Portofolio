@@ -50,6 +50,10 @@ body {
     #b28dff
   ); /* Gradasi biru muda dan ungu muda */
 }
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Shadow tambahan saat hover */
+  }
 
 /* Navbar */
 @media (max-width: 991px) {
@@ -124,6 +128,7 @@ body {
   left: 0;
   width: 100%;
   overflow: hidden;
+  
 }
 
 .wave {
@@ -178,17 +183,53 @@ body {
 
 /* About Section */
 #about {
+  /* background: #D4B5FF; */
   background: linear-gradient(
-    135deg,
-    #b28dff,
-    #ffffff
-  ); /* Gradasi ungu dan putih */
+    0deg,
+    #ade8eb,
+    #D4B5FF
+  ); 
   color: #333; /* Warna teks gelap agar mudah dibaca */
+  /* font-family: 'Poppins', sans-serif; */
 }
+
+
+  .image-container {
+    width: 100%;
+    max-width: 300px; /* Maksimum lebar gambar */
+    height: 0;
+    padding-bottom: 100%; /* Menjaga rasio gambar tetap bulat */
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px dashed black; /* Border dashed hitam */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white; /* Warna latar belakang putih */
+    margin: 0 auto; /* Centering */
+  }
+
+  .profile-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Agar gambar tidak terdistorsi dan tetap mengisi area */
+  }
+
+
+  
 
 /* Resume Section */
 #resume {
-  background-color: #e0f7fa; /* Warna biru pastel */
+    background: linear-gradient(
+        0deg,
+        #7cb5e7,
+        #ade8eb
+      ); /* Gradasi biru dan ungu muda */ 
 }
 
 /* Portfolio Section */
@@ -198,9 +239,11 @@ body {
     #7cb5e7,
     #b28dff
   ); /* Gradasi biru dan ungu muda */
+  
 }
 
 /* Contact Section */
 #contact {
   background-color: #ffffff; /* Latar belakang putih */
 }
+
