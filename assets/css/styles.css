@@ -10,6 +10,7 @@ ul {
 a {
   text-decoration: none;
 }
+/* Efek hover untuk memperbesar ikon */
 
 html {
   scroll-behavior: smooth;
@@ -51,9 +52,9 @@ body {
   ); /* Gradasi biru muda dan ungu muda */
 }
 .section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Shadow tambahan saat hover */
-  }
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Shadow tambahan saat hover */
+}
 
 /* Navbar */
 @media (max-width: 991px) {
@@ -128,7 +129,6 @@ body {
   left: 0;
   width: 100%;
   overflow: hidden;
-  
 }
 
 .wave {
@@ -183,53 +183,42 @@ body {
 
 /* About Section */
 #about {
-  /* background: #D4B5FF; */
-  background: linear-gradient(
-    0deg,
-    #ade8eb,
-    #D4B5FF
-  ); 
+  background: linear-gradient(0deg, #ade8eb, #d4b5ff);
   color: #333; /* Warna teks gelap agar mudah dibaca */
   /* font-family: 'Poppins', sans-serif; */
 }
 
+.profile-img {
+  background: linear-gradient(to bottom, #ffffff, #d4b5ff);
+  border-radius: 50%; /* Membuat gambar menjadi bulat */
+  border: 5px double #260443; /* Menambahkan border berwarna putih */
+  width: 90%; /* Gambar akan menyesuaikan lebar container */
+  height: auto; /* Menjaga aspek rasio gambar */
+}
 
-  .image-container {
-    width: 100%;
-    max-width: 300px; /* Maksimum lebar gambar */
-    height: 0;
-    padding-bottom: 100%; /* Menjaga rasio gambar tetap bulat */
-    border-radius: 50%;
-    overflow: hidden;
-    border: 4px dashed black; /* Border dashed hitam */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white; /* Warna latar belakang putih */
-    margin: 0 auto; /* Centering */
-  }
-
-  .profile-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Agar gambar tidak terdistorsi dan tetap mengisi area */
-  }
-
-
-  
+.image-container {
+  width: 100%; /* Membuat container mengambil seluruh lebar div parent */
+  height: 100%; /* Membuat container mengambil seluruh tinggi div parent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sosmed a:hover {
+  transform: scale(1.2); /* Membesarkan ikon menjadi 1.2x saat hover */
+  transition: transform 0.3s ease; /* Memberikan efek transisi halus */
+}
+.btn:hover {
+  transform: scale(1.15); /* Membesarkan ikon menjadi 1.2x saat hover */
+  transition: transform 0.3s ease; /* Memberikan efek transisi halus */
+}
 
 /* Resume Section */
 #resume {
-    background: linear-gradient(
-        0deg,
-        #7cb5e7,
-        #ade8eb
-      ); /* Gradasi biru dan ungu muda */ 
+  background: linear-gradient(
+    0deg,
+    #7cb5e7,
+    #ade8eb
+  ); /* Gradasi biru dan ungu muda */
 }
 
 /* Portfolio Section */
@@ -239,11 +228,9 @@ body {
     #7cb5e7,
     #b28dff
   ); /* Gradasi biru dan ungu muda */
-  
 }
 
 /* Contact Section */
 #contact {
   background-color: #ffffff; /* Latar belakang putih */
 }
-
