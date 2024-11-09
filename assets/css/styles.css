@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 ul {
-  list-style: none;
+  list-style: disc;
 }
 a {
   text-decoration: none;
@@ -39,6 +39,7 @@ body {
   /* font-family: 'Poppins', sans-serif; */
 }
 
+/* Hapus jika sudah selesai semua soalnya tidak ada kelas section */
 .section {
   min-height: 100vh;
   padding: 2rem 0;
@@ -183,7 +184,7 @@ body {
 
 /* About Section */
 #about {
-  background: linear-gradient(0deg, #ade8eb, #d4b5ff);
+  background: linear-gradient(to top, #ade8eb, #d4b5ff);
   color: #333; /* Warna teks gelap agar mudah dibaca */
   /* font-family: 'Poppins', sans-serif; */
 }
@@ -214,23 +215,46 @@ body {
 
 /* Resume Section */
 #resume {
-  background: linear-gradient(
-    0deg,
-    #7cb5e7,
-    #ade8eb
-  ); /* Gradasi biru dan ungu muda */
+  background: linear-gradient(to top, #7cb5e7, #ade8eb);
+}
+
+.vertical-line {
+  width: 2px;
+  height: 100%;
+  background-color: #007bff;
+  left: 0; /* Mengatur agar garis vertikal mulai dari kiri */
+  top: 0;
+}
+
+.horizontal-branch {
+  width: 20px;
+  height: 2px;
+  background-color: #007bff;
+  left: 0; /* Agar cabang horizontal mulai dari kiri */
+  top: 10%;
+  transform: translateY(-10%);
+}
+
+.branch-circle {
+  width: 8px;
+  height: 8px;
+  background-color: #007bff;
+  border-radius: 50%;
+  left: 20px; /* Posisikan bulatan tepat di ujung cabang horizontal */
+  top: 9%;
+  transform: translateY(-9%);
 }
 
 /* Portfolio Section */
-#portfolio {
+portfolio {
   background: linear-gradient(
-    135deg,
+    to bottom,
     #7cb5e7,
     #b28dff
   ); /* Gradasi biru dan ungu muda */
 }
 
 /* Contact Section */
-#contact {
-  background-color: #ffffff; /* Latar belakang putih */
+contact {
+  background: linear-gradient(to bottom, #b28dff, #7cb5e7);
 }
