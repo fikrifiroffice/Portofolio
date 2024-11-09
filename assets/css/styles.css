@@ -246,7 +246,7 @@ body {
 }
 
 /* Portfolio Section */
-portfolio {
+#portfolio {
   background: linear-gradient(
     to bottom,
     #7cb5e7,
