@@ -99,3 +99,17 @@ const typeEffect = () => {
 
 // Memulai efek mengetik saat halaman dimuat
 window.onload = typeEffect;
+
+// Maps
+// Inisialisasi peta dengan koordinat Kampus PENS
+var map = L.map('map').setView([-7.2825, 112.7749], 16); // Koordinat Kampus PENS
+
+// Tambahkan tile layer dari OpenStreetMap
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+// Tambahkan marker untuk lokasi Kampus PENS
+L.marker([-7.2825, 112.7749]).addTo(map)
+  .bindPopup("<b>Kampus PENS</b><br>Lokasi kami.")
+  .openPopup();

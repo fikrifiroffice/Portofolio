@@ -241,8 +241,8 @@ body {
   background-color: #007bff;
   border-radius: 50%;
   left: 20px; /* Posisikan bulatan tepat di ujung cabang horizontal */
-  top: 9%;
-  transform: translateY(-9%);
+  top: 8%;
+  transform: translateY(-8%);
 }
 
 /* Portfolio Section */
@@ -255,6 +255,7 @@ body {
 }
 
 /* Contact Section */
-contact {
+#contact {
   background: linear-gradient(to bottom, #b28dff, #7cb5e7);
 }
+
