@@ -1,16 +1,18 @@
 // Navbar
 const navbar = document.getElementById("navbar");
 const menuItems = document.querySelectorAll(".navbar-nav .nav-link");
-const sections = document.querySelectorAll("section"); // Semua section pada halaman
+const sections = document.querySelectorAll("section"); // Semua section di halaman
 
-// Fungsi untuk menambahkan kelas 'scrolled' pada navbar saat scroll lebih dari 50px
+// Fungsi untuk menambahkan kelas 'scrolled' pada navbar saat halaman discroll lebih dari 50px
 const handleScroll = () => {
-    // Menambahkan atau menghapus kelas 'scrolled' pada navbar berdasarkan scroll Y
+    // Tambah/hapus kelas 'scrolled' berdasarkan posisi scroll
     navbar.classList.toggle("scrolled", window.scrollY > 50);
 
     let currentSection = null;
+
+    // Mendeteksi section yang aktif (terlihat di layar)
     sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 200; // Menyesuaikan untuk padding atas
+        const sectionTop = section.offsetTop - 200; // Penyesuaian untuk jarak dari atas
         const sectionBottom = sectionTop + section.offsetHeight;
 
         if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
@@ -18,42 +20,45 @@ const handleScroll = () => {
         }
     });
 
-    // Menandai menu yang sesuai dengan section yang terlihat
+    // Highlight menu item sesuai dengan section yang sedang terlihat
     menuItems.forEach((item) => {
-        const targetId = item.getAttribute("href").substring(1); // Ambil id dari menu
+        const targetId = item.getAttribute("href").substring(1); // Ambil ID dari href
         const targetSection = document.getElementById(targetId);
 
-        item.classList.toggle(
-            "active",
-            currentSection && targetSection === currentSection,
-        );
+        // Aktifkan menu yang sesuai dengan section yang terlihat
+        item.classList.toggle("active", currentSection && targetSection === currentSection);
+
+        // Jika section aktif berubah, perbarui URL tanpa reload
+        if (currentSection && targetSection === currentSection) {
+            history.replaceState(null, null, `#${targetId}`);
+        }
     });
 };
 
-// Menambahkan event listener untuk scroll
+// Menambahkan event listener untuk mendeteksi scroll
 window.addEventListener("scroll", handleScroll);
 
 // Fungsi untuk menangani klik pada menu navbar
 const handleMenuClick = (e) => {
-    e.preventDefault();
-    const targetId = e.currentTarget.getAttribute("href").substring(1); // Ambil id target section
+    e.preventDefault(); // Mencegah default behavior
+    const targetId = e.currentTarget.getAttribute("href").substring(1); // Ambil ID section dari href
     const targetSection = document.getElementById(targetId);
 
-    // Menggulung ke section yang sesuai dengan scroll halus
+    // Scroll halus ke section yang dituju
     targetSection.scrollIntoView({
         behavior: "smooth",
         block: "start",
     });
 
-    // Menambahkan kelas active ke menu yang diklik
+    // Menambahkan kelas 'active' ke menu yang diklik
     menuItems.forEach((menu) => menu.classList.remove("active"));
     e.currentTarget.classList.add("active");
 
-    // Memperbarui URL tanpa reload halaman
+    // Perbarui URL tanpa reload halaman
     history.pushState(null, null, `#${targetId}`);
 };
 
-// Menambahkan event listener untuk setiap item menu
+// Menambahkan event listener untuk klik pada setiap item menu
 menuItems.forEach((item) => {
     item.addEventListener("click", handleMenuClick);
 });
@@ -62,54 +67,53 @@ menuItems.forEach((item) => {
 const roleElement = document.getElementById("role");
 const roles = [
     "Mahasiswa D3 PJJ Teknik Informatika",
-    "Drafter Elektrik-Mekanik",
+    "Drafter Elektrik-Mekanik"
 ];
 
-let currentRoleIndex = 0; // Indeks peran yang sedang ditampilkan
-let currentText = ""; // Teks yang sedang diketik
+let currentRoleIndex = 0; // Indeks peran yang aktif
+let currentText = ""; // Teks yang sedang ditampilkan
 let isDeleting = false; // Status apakah sedang menghapus teks
 let timeout; // Untuk menyimpan timeout
 
 // Fungsi efek mengetik
 const typeEffect = () => {
-    const currentRole = roles[currentRoleIndex]; // Peran yang sedang aktif
+    const currentRole = roles[currentRoleIndex]; // Role yang sedang aktif
     currentText = currentRole.slice(
         0,
-        isDeleting ? currentText.length - 1 : currentText.length + 1,
+        isDeleting ? currentText.length - 1 : currentText.length + 1
     );
 
     roleElement.textContent = currentText;
 
     if (!isDeleting && currentText === currentRole) {
-        // Tunggu 3 detik setelah mengetik sebelum mulai menghapus
+        // Jika selesai mengetik, tunggu 3 detik sebelum mulai menghapus
         timeout = setTimeout(() => {
             isDeleting = true;
             typeEffect();
         }, 3000);
     } else if (isDeleting && currentText === "") {
-        // Setelah menghapus, beralih ke peran berikutnya
+        // Jika selesai menghapus, lanjutkan ke role berikutnya
         isDeleting = false;
         currentRoleIndex = (currentRoleIndex + 1) % roles.length;
-        timeout = setTimeout(typeEffect, 150);
+        timeout = setTimeout(typeEffect, 150); // Mulai mengetik role berikutnya
     } else {
-        // Mengatur kecepatan mengetik dan menghapus
+        // Atur kecepatan mengetik dan menghapus
         timeout = setTimeout(typeEffect, isDeleting ? 100 : 50);
     }
 };
 
-// Memulai efek mengetik saat halaman dimuat
+// Memulai efek mengetik setelah halaman dimuat
 window.onload = typeEffect;
 
-// Maps
-// Inisialisasi peta dengan koordinat Kampus PENS
+// Inisialisasi peta dengan koordinat Kampus PENS menggunakan Leaflet.js
 var map = L.map('map').setView([-7.2825, 112.7749], 16); // Koordinat Kampus PENS
 
 // Tambahkan tile layer dari OpenStreetMap
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
 // Tambahkan marker untuk lokasi Kampus PENS
 L.marker([-7.2825, 112.7749]).addTo(map)
-  .bindPopup("<b>Kampus PENS</b><br>Lokasi kami.")
-  .openPopup();
+    .bindPopup("<b>Kampus PENS</b><br>Lokasi kami.")
+    .openPopup();

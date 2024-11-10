@@ -1,4 +1,4 @@
-/* Root */
+/* Root Styles */
 * {
   margin: 0;
   padding: 0;
@@ -10,13 +10,12 @@ ul {
 a {
   text-decoration: none;
 }
-/* Efek hover untuk memperbesar ikon */
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Srollbar */
+/* Scrollbar Styling */
 html::-webkit-scrollbar {
   width: 0.5rem;
 }
@@ -27,34 +26,11 @@ html::-webkit-scrollbar-thumb {
   background: #420177;
 }
 
+/* Body */
 body {
   overflow-x: hidden;
-  background: linear-gradient(
-    135deg,
-    #7cb5e7,
-    #ffffff,
-    #b28dff
-  ); /* Gradasi biru muda, putih, ungu muda */
+  background: linear-gradient(135deg, #7cb5e7, #ffffff, #b28dff);
   background-size: 100% 100%;
-  /* font-family: 'Poppins', sans-serif; */
-}
-
-/* Hapus jika sudah selesai semua soalnya tidak ada kelas section */
-.section {
-  min-height: 100vh;
-  padding: 2rem 0;
-  display: flex;
-  align-items: center;
-  background-color: #ffffff; /* Warna putih untuk section agar lebih bersih */
-  background-image: linear-gradient(
-    135deg,
-    #e0f7fa,
-    #b28dff
-  ); /* Gradasi biru muda dan ungu muda */
-}
-.section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Shadow tambahan saat hover */
 }
 
 /* Navbar */
@@ -79,7 +55,6 @@ body {
 .navbar-nav .nav-link {
   color: #333; /* Warna teks gelap */
 }
-
 .navbar-nav .nav-link.active {
   color: #007bff;
   border-bottom: 2px solid #007bff;
@@ -89,6 +64,7 @@ body {
   background-color: rgba(255, 255, 255, 1);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+/* Navbar End */
 
 /* Home Section */
 #home {
@@ -98,13 +74,9 @@ body {
   padding-bottom: 5rem;
 }
 
-/* Blob Mask untuk Gambar Profil */
+/* Blob Mask untuk gambar profil */
 .blob-mask {
-  background: linear-gradient(
-    135deg,
-    #7cb5e7,
-    #b28dff
-  ); /* Gradasi biru dan ungu muda */
+  background: linear-gradient(135deg, #7cb5e7, #b28dff);
   -webkit-mask-image: url("../images/blob.svg");
   mask-image: url("../images/blob.svg");
   mask-size: 210%;
@@ -123,7 +95,7 @@ body {
   display: block;
 }
 
-/* Wave Background di Bagian Bawah Home */
+/* Wave di bagian bawah Home */
 .wave-container {
   position: absolute;
   bottom: 0;
@@ -150,112 +122,99 @@ body {
   font-weight: bold;
   z-index: 1;
 }
-
 .btn-about-me i {
   font-size: 0.75rem;
   margin-left: 0.5rem;
 }
-
 .btn-about-me:hover {
   background-color: #452cb1;
 }
 
-/* Role Text di Bagian Home */
+/* Role Text */
 #role {
   font-weight: bold;
   font-size: 1.5rem;
 }
-/* Button */
-.btn-about-me {
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50px;
-  background-color: #5636d3; /* Warna ungu */
-  color: #ffffff;
-  font-weight: bold;
-}
-
-.btn-about-me:hover {
-  background-color: #452cb1;
-}
+/* Home End */
 
 /* About Section */
 #about {
   background: linear-gradient(to top, #ade8eb, #d4b5ff);
-  color: #333; /* Warna teks gelap agar mudah dibaca */
-  /* font-family: 'Poppins', sans-serif; */
+  color: #333;
 }
 
+/* Gambar profil di About Section */
 .profile-img {
   background: linear-gradient(to bottom, #ffffff, #d4b5ff);
-  border-radius: 50%; /* Membuat gambar menjadi bulat */
-  border: 5px double #260443; /* Menambahkan border berwarna putih */
-  width: 90%; /* Gambar akan menyesuaikan lebar container */
-  height: auto; /* Menjaga aspek rasio gambar */
+  border-radius: 50%;
+  border: 5px double #260443;
+  width: 90%;
+  height: auto;
 }
 
 .image-container {
-  width: 100%; /* Membuat container mengambil seluruh lebar div parent */
-  height: 100%; /* Membuat container mengambil seluruh tinggi div parent */
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+/* Ikon media sosial */
 .sosmed a:hover {
-  transform: scale(1.2); /* Membesarkan ikon menjadi 1.2x saat hover */
-  transition: transform 0.3s ease; /* Memberikan efek transisi halus */
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
 }
+
+/* Efek hover untuk tombol */
 .btn:hover {
-  transform: scale(1.15); /* Membesarkan ikon menjadi 1.2x saat hover */
-  transition: transform 0.3s ease; /* Memberikan efek transisi halus */
+  transform: scale(1.15);
+  transition: transform 0.3s ease;
 }
+/* About End */
 
 /* Resume Section */
 #resume {
   background: linear-gradient(to top, #7cb5e7, #ade8eb);
 }
 
+/* Garis vertikal pada timeline */
 .vertical-line {
   width: 2px;
   height: 100%;
   background-color: #007bff;
-  left: 0; /* Mengatur agar garis vertikal mulai dari kiri */
+  left: 0;
   top: 0;
 }
 
+/* Garis horizontal dan bulatan di timeline */
 .horizontal-branch {
   width: 20px;
   height: 2px;
   background-color: #007bff;
-  left: 0; /* Agar cabang horizontal mulai dari kiri */
+  left: 0;
   top: 10%;
   transform: translateY(-10%);
 }
-
 .branch-circle {
   width: 8px;
   height: 8px;
   background-color: #007bff;
   border-radius: 50%;
-  left: 20px; /* Posisikan bulatan tepat di ujung cabang horizontal */
+  left: 20px;
   top: 8%;
   transform: translateY(-8%);
 }
+/* Resume End */
 
 /* Portfolio Section */
 #portfolio {
-  background: linear-gradient(
-    to bottom,
-    #7cb5e7,
-    #b28dff
-  ); /* Gradasi biru dan ungu muda */
+  background: linear-gradient(to bottom, #7cb5e7, #b28dff);
 }
+/* Portfolio End */
 
 /* Contact Section */
 #contact {
   background: linear-gradient(to bottom, #b28dff, #7cb5e7);
 }
-
+/* Contact End */
